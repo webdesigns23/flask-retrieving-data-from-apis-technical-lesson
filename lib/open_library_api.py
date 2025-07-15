@@ -18,7 +18,9 @@ class Search:
 
         response = requests.get(URL)
         return response.content
+    
 
+    #Need to convert search results form plaintext to easier to read format json
     def get_search_results_json(self):
         search_term = "the lord of the rings"
 
@@ -45,12 +47,15 @@ class Search:
         return response_formatted
 
 
+'''To check if displaying results, shows in plaintext format'''
 # results = Search().get_search_results()
 # print(results)
 
+'''To check if displaying results, shows in JSON format'''
 # results_json = Search().get_search_results_json()
 # print(json.dumps(results_json, indent=1))
 
+'''User Input'''
 search_term = input("Enter a book title: ")
 result = Search().get_user_search_results(search_term)
 print("Search Result:\n")
